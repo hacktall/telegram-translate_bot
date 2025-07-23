@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+.env
+package-lock.json
+
+# Áudio temporário
+*.mp3
+
+# Logs
+logs/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Outros temporários
+translation.mp3

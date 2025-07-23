@@ -1,0 +1,21 @@
+{
+  "name": "telegram-translate-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Bot do Telegram para tradução de idiomas via Google Translate API",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^8.0.0",
+    "axios": "^1.10.0",
+    "dotenv": "^17.2.0",
+    "google-translate-api-x": "^10.7.2",
+    "gtts": "^0.2.1",
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
