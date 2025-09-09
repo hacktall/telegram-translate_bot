@@ -5,7 +5,7 @@ Um bot do Telegram que traduz mensagens, envia áudios com a pronúncia no idiom
 ## 📦 Funcionalidades
 
 - � Tradução automática para vários idiomas com `/start` e escolha de idioma.
-- 🔊 Pronúncia via áudio (TTS) usando `gtts`.
+- 🔊 Pronúncia via áudio (TTS) usando `tts`.
 - � Definições com exemplos de uso (via integração com dicionário ou ChatGPT).
 - 🧠 Quiz de tradução com níveis (médio, difícil e muito difícil).
 - 🎯 Desafio do dia com palavras/frases aleatórias para estudar.
@@ -88,7 +88,6 @@ node index.js
 
 /desafio → envia desafio diário com áudio.
 
-/lang <codigo> → define idioma de destino.
 
 Exemplo: /en, /es, /fr.
 
