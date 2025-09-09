@@ -1,16 +1,15 @@
-
-# 🤖 Telegram Translate & Educational Bot
+📘 Telegram Translate Bot
 
 Um bot do Telegram que traduz mensagens, envia áudios com a pronúncia no idioma traduzido, oferece quizzes, desafios diários e definições de palavras. Perfeito para aprender idiomas de forma divertida e interativa.
 
 ## 📦 Funcionalidades
 
-- 🌍 Tradução automática para vários idiomas com `/start` e escolha de idioma.
+- � Tradução automática para vários idiomas com `/start` e escolha de idioma.
 - 🔊 Pronúncia via áudio (TTS) usando `gtts`.
-- 📘 Definições com exemplos de uso (via integração com dicionário ou ChatGPT).
+- � Definições com exemplos de uso (via integração com dicionário ou ChatGPT).
 - 🧠 Quiz de tradução com níveis (médio, difícil e muito difícil).
 - 🎯 Desafio do dia com palavras/frases aleatórias para estudar.
-- 🔄 Suporte multilíngue (PT, EN, ES, FR, DE, IT, JA, RU).
+- � Suporte multilíngue (PT, EN, ES, FR, DE, IT, JA, RU).
 
 ## 🚀 Instalação
 
@@ -44,53 +43,100 @@ node index.js
 
 > 💡 Use `nodemon index.js` para reinício automático durante o desenvolvimento.
 
-## 🗂 Estrutura do Projeto
+## � Estrutura do Projeto
 
 ```
 telegram-translate-bot/
-│
 ├── educacional/
-│   ├── definicao.js          # Comando /def (dicionário + exemplos)
-│   ├── desafioDoDia.js       # Palavra/frase diária com tradução
-│   ├── quiz.js               # Quiz com níveis de dificuldade
-│
+│   ├── definicao.js      # /def - busca definições de palavras
+│   ├── desafios.js       # /desafio - envia desafio do dia com áudio
+│   ├── quiz.js           # /quiz - quiz interativo por nível
 ├── settings/
-│   └── .env                  # Tokens de API
-│
-├── index.js                 # Arquivo principal do bot
+│   └── .env              # variáveis de ambiente (NÃO comitar)
+├── index.js              # inicialização e lógica principal
 ├── package.json
 └── README.md
-```
 
-## ✨ Comandos do Bot
+🛠️ Instalação e Execução
+1. Clonar o repositório
+git clone https://github.com/hacktall/telegram-translate_bot.git
+cd telegram-translate_bot
 
-- `/start` → Inicia e permite escolher idioma de tradução.
-- `/lang <código>` → Define idioma de destino (ex: `/en` para inglês).
-- `/def <palavra>` → Retorna definição, tradução e exemplo de uso.
-- `/quiz` → Inicia quiz com perguntas sequenciais por dificuldade.
-- `/desafio` → Envia desafio educacional diário com pronúncia.
+2. Instalar dependências
+npm install
 
-## 🌐 Idiomas Suportados
+3. Configurar variáveis de ambiente
 
-| Código | Idioma    |
-|--------|-----------|
-| pt     | Português |
-| en     | Inglês    |
-| es     | Espanhol  |
-| fr     | Francês   |
-| de     | Alemão    |
-| it     | Italiano  |
-| ja     | Japonês   |
-| ru     | Russo     |
+Crie o arquivo settings/.env:
 
-## 🧠 Melhorias Futuras
+TELEGRAM_BOT_TOKEN=seu_token_aqui
+OPENAI_API_KEY=sua_chave_openai_opcional
 
-- Interface web para gerenciar palavras e perguntas.
-- Rankings de pontuação no quiz.
-- Desafios semanais e recompensas.
-- Tradução offline com cache.
-- Modo estudo por categorias (ex: comida, viagem, trabalho).
 
-## 📄 Licença
+⚠️ Nunca comite o .env no repositório.
 
-MIT License © 2025 - Desenvolvido com ❤️ por hacktall
+4. Iniciar o bot
+node index.js
+
+💬 Comandos Disponíveis
+
+/start → mostra idiomas disponíveis.
+
+/def <palavra> → obtém definição, exemplo e tradução. obs:so aceita ingles por exemplo /def car
+
+/quiz <nivel> → inicia quiz (níveis: medio, dificil, muito_dificil).
+
+/desafio → envia desafio diário com áudio.
+
+/lang <codigo> → define idioma de destino.
+
+Exemplo: /en, /es, /fr.
+
+Idiomas suportados:
+
+🇬🇧 Inglês (/en)
+
+🇧🇷 Português (/pt)
+
+🇪🇸 Espanhol (/es)
+
+🇫🇷 Francês (/fr)
+
+🇩🇪 Alemão (/de)
+
+🇮🇹 Italiano (/it)
+
+🇯🇵 Japonês (/ja)
+
+🇷🇺 Russo (/ru)
+
+🔐 Segurança
+
+Entrada sanitizada: evita injeção de Markdown.
+
+Rate limiting: impede abuso com requisições excessivas.
+
+Arquivos temporários únicos para áudios (sem sobrescrita).
+
+Persistência simples de quiz em arquivo quiz_state.json (pode trocar para Redis).
+
+Logs internos sem expor informações sensíveis.
+
+Variáveis sensíveis (tokens e chaves) via .env.
+
+🚀 Roadmap Futuro
+
+ Interface web para gerenciar perguntas do quiz.
+
+ Rankings globais de pontuação.
+
+ Tradução offline com cache.
+
+ Modo de estudo por categorias (comida, viagem, trabalho).
+
+ Suporte a mais idiomas.
+
+📜 Licença
+
+Este projeto é open-source sob a licença MIT.
+Contribuições são bem-vindas! 🎉
